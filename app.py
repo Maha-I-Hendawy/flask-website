@@ -34,7 +34,7 @@ def services():
 def contact():
 	form = MessageForm()
 	if form.validate_on_submit():
-		msg = Message(form.title.data, recipients=['demo@email.com']) # Provide email address you want to send emails to from your default email provided above
+		msg = Message(form.title.data, recipients=['lydialankcaster@gmail.com']) # Provide email address you want to send emails to from your default email provided above
 		msg.body = f'''From: {form.name.data}, {form.email.data},
 		Message: {form.message.data}'''
 		mail.send(msg)
@@ -43,4 +43,4 @@ def contact():
 	return render_template('contact.html', title='Contact Us', form=form)
 
 if __name__ == '__main__':
-	app.run()
+	app.run(port=5000)
