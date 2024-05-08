@@ -19,6 +19,12 @@ def home():
 
 
 
+@app.route('/about')
+def about():
+	return render_template('about.html', title='About Us Page')
+
+
+
 @app.route('/products')
 def products():
 	return render_template('products.html', title='Products')
@@ -42,5 +48,3 @@ def contact():
 		return redirect(url_for('home'))
 	return render_template('contact.html', title='Contact Us', form=form)
 
-if __name__ == '__main__':
-	app.run(port=5000)
